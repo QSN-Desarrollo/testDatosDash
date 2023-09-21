@@ -1,8 +1,9 @@
 import { NGrams } from "natural";
+import moment from 'moment';
+import 'moment/locale/es'
 import fs from 'fs'
 import { ObjetoDB, TweetGlobales } from "../interface/datosGlobales";
 import { FiltrosSchema } from "src/interface/filtroInterface";
-import moment from 'moment';
 class DatosGlobales {
   private consulta: Record<string, any> = {};
 
@@ -239,6 +240,7 @@ class DatosGlobales {
     if (!objetos || objetos.length === 0) {
       throw new Error('El array de objetos está vacío o no se proporcionó.');
     }
+        moment.locale('es');
   const rto:TweetGlobales[] = (await ((this.mapearObjetos(objetos)))).flat();
     const objetosModificados = rto.map((objeto) => {
       const fechaKey = 'fecha'; 
