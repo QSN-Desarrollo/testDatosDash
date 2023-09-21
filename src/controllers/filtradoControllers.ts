@@ -77,9 +77,9 @@ class TweetController {
       // console.time('Tiempo de respuesta de filter Nubes jesus');
       // const filterNubesTrigramas = await DatosGlobales.filtrarTrigramas(findDate);
       // console.timeEnd('Tiempo de respuesta de filter Nubes Trigramas');
-  
+  console.log(findDate)
       console.time('Tiempo de respuesta de filterAcount');
-      const filterAcount = await DatosGlobales.mapearObjetos(findDate);
+      const filterAcount = await DatosGlobales.procesarFechas(findDate);
       console.timeEnd('Tiempo de respuesta de filterAcount');
       res.status(200).json({ msg: filterAcount });
     } catch (error) {
