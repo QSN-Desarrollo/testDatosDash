@@ -1,0 +1,42 @@
+[
+  {
+    "anidados": false,
+    "categoria": ["Política", "Economía", "Deportes"],
+    "fechaFin": "2023-08-10",
+    "fechaInicio": "2023-08-08",
+    "horaFin": "11:00:00",
+    "horaInicio": "05:00:00",
+    "modelo": ["ModeloA", "ModeloB", "ModeloC"],
+    "polaridad": ["Positivo", "Neutral", "Negativo"],
+    "serie": ["Serie1"],
+    "subserie": ["SubserieA"],
+    "filtro": [
+      {
+        "nombre": "Filtro1",
+        "valor": "Valor1"
+      },
+      {
+        "nombre": "Filtro2",
+        "valor": "Valor2"
+      }
+    ]
+},
+  
+{
+  "anidados": null,
+  "categoria": null,
+  "fechaFin":null,
+  "fechaInicio": null,
+  "horaFin": null,
+  "horaInicio": null,
+  "modelo":[ "ModeloA" , "ModeloB" ],
+  "polaridad": null,
+  "serie": ["Serie1"],
+  "subserie": null,
+  "filtro": null
+}
+
+]
+
+
+
