@@ -239,9 +239,8 @@ class DatosGlobales {
     if (!objetos || objetos.length === 0) {
       throw new Error('El array de objetos está vacío o no se proporcionó.');
     }
-  const rto:TweetGlobales[][] = await this.mapearObjetos(objetos);
-  console.log(rto)
-    const objetosModificados = objetos.map((objeto) => {
+  const rto:TweetGlobales[] = (await ((this.mapearObjetos(objetos)))).flat();
+    const objetosModificados = rto.map((objeto) => {
       const fechaKey = 'fecha'; 
       if (!objeto[fechaKey]) {
         throw new Error(`La propiedad "${fechaKey}" no está presente en uno de los objetos proporcionados.`);
@@ -256,10 +255,8 @@ class DatosGlobales {
       objeto.date = fechaFormateada;
       objeto.hora = hora;
       objeto.diaSemana = diaSemana;
-      // console.log(objeto)
       return objeto;
     });
-    // console.log(objetosModificados)
     return objetosModificados;
   }
   // async filtrarDatosEnParalelo(arrayDeObjetos: any[]): Promise<{
